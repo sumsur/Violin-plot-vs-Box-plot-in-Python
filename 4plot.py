@@ -1,8 +1,8 @@
 import pandas as pd
-import numpy as np
+import numpy as np  # packages for importing data
 
 import seaborn as sns
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt # packages for creating plots
 
 #initialize a dataframe
 asd = pd.read_excel(r'C:\Users\asd.xlsx', sheet_name='Sheet1')
@@ -13,7 +13,7 @@ print('DataFrame\n----------\n', asdd)
 print('\nDataFrame datatypes :\n', asdd.dtypes)
 
 #convert pandas dataframe to numpy array
-arr = asdd.to_numpy()
+arr = asdd.to_numpy() # creating array from DataFrame to use sns package
 
 
 print('\nNumpy Array\n----------\n', arr)
@@ -24,10 +24,3 @@ plot1=sns.violinplot(x='Mesec', y='Broj zahteva poslednjeg dana u mesecu', data=
 
 plt.figure(2)
 plot2=sns.boxplot(x='Mesec', y='Broj zahteva poslednjeg dana u mesecu', data=asdd)
-
-plt.figure(3)
-plot3=sns.swarmplot(x='Mesec', y='Broj zahteva poslednjeg dana u mesecu', data=asdd)
-
-plt.figure(4)
-plot4=sns.jointplot(x='Mesec', y='Broj zahteva poslednjeg dana u mesecu', data=asdd, kind='kde')
-plt.show()
